@@ -3,11 +3,11 @@ using BookStore.Model.Models;
 
 namespace BookStore.Model.Repository
 {
-	public interface IBookReposistory: IRepository<Book>
+	public interface IBookRepository: IRepository<Book>
 	{
 
 	}
-	public class BookRepository:RepositoryBase<Book>,IBookReposistory
+	public class BookRepository:RepositoryBase<Book>,IBookRepository
 	{
 		public BookRepository(IDbFactory dbFactory) : base(dbFactory)
 		{

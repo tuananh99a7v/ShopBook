@@ -13,10 +13,11 @@ namespace BookStore.Model.Models
 		public int OrderId { get; set; }
 		public string ReceiverName { get; set; }
 		public string Address { get; set; }
-		public byte PhoneNumber { get; set; }
-		public int Status { get; set; }
-		public DateTime DateCreated { get; set; } = DateTime.Now;
-		public DateTime DateModified { get; set; } = DateTime.Now;
-		public decimal Cost { get; set; }
+		public string PhoneNumber { get; set; }
+		public int? Status { get; set; }
+		public DateTime? DateCreated { get; set; } = DateTime.Now;
+		public DateTime? DateModified { get; set; } = DateTime.Now;
+		public decimal? Cost { get; set; }
+		public string UserId { get; set; }
 	}
 }

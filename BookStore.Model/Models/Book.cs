@@ -18,10 +18,17 @@ namespace BookStore.Model.Models
 		public string Title { get; set; }
 		public string Description { get; set; }
 		public string Images { get; set; }
-		public decimal Price { get; set; }
-		public int Status { get; set; }
-		public int Quantity { get; set; }
-		public DateTime DateCreated { get; set; } = DateTime.Now;
-		public DateTime DateModified { get; set; } = DateTime.Now;
+		public decimal? Price { get; set; }
+		public int? Status { get; set; }
+		public int? Quantity { get; set; }
+		public int? QuantityImport { get; set; }
+		public int? QuantityExport { get; set; }
+		public DateTime? DateCreated { get; set; } = DateTime.Now;
+		public DateTime? DateModified { get; set; } = DateTime.Now;
+		public int PublisherId { get; set; }
+		public int AuthorId { get; set; }
+		public int Category { get; set; }
+		public string UserId { get; set; }
+
 	}
 }

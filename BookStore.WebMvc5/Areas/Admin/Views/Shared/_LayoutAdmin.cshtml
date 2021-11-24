@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>@Html.Raw(ViewBag.Title)</title>
+	<meta name="robots" content="index,follow" />
+	<meta http-equiv="content-language" content="vi" />
+	<meta name="author" content="tuananh">
+	<link href="~/Assets/shreyu/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/Assets/shreyu/css/icons.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/Assets/shreyu/libs/select2/select2.min.css" rel="stylesheet" />
+	<link href="~/Assets/shreyu/css/app.css?v=12" rel="stylesheet" type="text/css" />
+	<link href="~/LibraryClient/Library/css/ValueStyle.css" rel="stylesheet" />
+	<link href="~/LibraryClient/Library/css/LibraryStyles.css" rel="stylesheet" />
+	<link href="~/LibraryClient/Loading/jquery.loading.min.css" rel="stylesheet" />
+	<link href="~/LibraryClient/SweetAlert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="~/LibraryClient/GridGenerator/GridGenerator.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+	<link href="~/Assets/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+	<script src="~/Assets/jquery/jquery-3.6.0.min.js"></script>
+	<script src="~/LibraryClient/SweetAlert2/sweetalert2.min.js"></script>
+	<script src="~/LibraryClient/SweetAlert2/ShowAlert.js"></script>
+	<script src="~/Assets/shreyu/libs/select2/select2.min.js"></script>
+	<script src="~/Assets/shreyu/js/vendor.min.js"></script>
+	<link href="~/LibraryClient/summernote/summernote-bs4.min.css" rel="stylesheet" />
+	<script type="text/javascript">
+		var objAjax = {
+			parameters: undefined,
+			isFuntConfirm: false,
+			isPageAdmin: true,
+			divLoading: undefined
+		}
+		$(function () {
+			$("[data-toggle=\"tooltip\"]").tooltip();
+			$("[data-toggle=\"popover\"]").popover({ html: true });
+		});
+		function LoadSkill() {
+			$("[data-toggle=\"tooltip\"]").tooltip({ html: true });
+			$("[data-toggle=\"popover\"]").popover({ html: true });
+		}
+	</script>
+</head>
+<body class="boxed-layout sidebar-enable" data-left-keep-condensed="true">
+	<div id="wrapper">
+		<div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
+			<div class="container" style="max-width: 1600px;width: 100%" id="table-menu">
+				<ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0" style="padding: 10px 10px;">
+					<li class="">
+						<button class="button-menu-mobile open-left">
+							<i data-feather="menu" class="menu-icon"></i>
+							<i data-feather="x" class="close-icon"></i>
+						</button>
+					</li>
+				</ul>
+				<a href="/" class="navbar-brand mr-0">
+					<span>
+						<img src="/Images/logo.png" style="height: 57px; padding-left: 7px;" />
+					</span>
+				</a>
+				@{Html.RenderAction("GetMenu", "Home", new { area = "Admin" }); }
+			</div>
+		</div>
+		<div class="left-side-menu">
+			<div class="sidebar-content">
+				<div id="sidebar-menu" class="slimscroll-menu">
+					<ul class="metismenu" id="menu-bar">
+						@{Html.RenderAction("GetSidebar", "Home", new { area = "Admin" });}
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="content-page">
+			<div class="content">
+				<div class="container-fluid">
+					@RenderBody()
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="rightbar-overlay"></div>
+	<div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog modal-dialog-centered" role="document" style="max-width:500px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-uppercase" style="width: 100%; padding-left: 41%; padding-top: 11px; color: #21409a">Đổi mật khẩu</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="PasswordOld" class="form-control-label">Mật khẩu cũ: </label>
+								<input class="form-control form-control-alternative" id="PasswordOld" placeholder="Nhập mật khẩu cũ" />
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="PasswordNew" class="form-control-label">Mật khẩu mới: </label>
+								<input class="form-control form-control-alternative" id="PasswordNew" placeholder="Nhập mật khẩu mới" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-light width120px" data-dismiss="modal">Đóng</button>
+					<button type="button" class="btn btn-primary btn-prolog width120px" onclick="ChangePass()">Xác nhận</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="~/LibraryClient/summernote/summernote-bs4.min.js"></script>
+	<script src="~/LibraryClient/GridGenerator/jquery.twbsPagination.min.js"></script>
+	<script src="~/LibraryClient/Loading/jquery.loading.min.js"></script>
+	<script src="~/Assets/shreyu/libs/select2/select2.min.js"></script>
+	<script src="~/LibraryClient/bootstrap-datepicker/bootstrap-datetimepicker.js"></script>
+	<script src="~/LibraryClient/Library/Library.js"></script>
+	<script src="~/Assets/shreyu/js/app.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+			Summernote("#ContentFeeback", 400);
+			$("select[data-plugin='customselect']").select2();
+		});
+
+		function ChangePass() {
+			if (!ValidatePass()) return;
+			window.objAjax.parameters = {
+				PasswordNew: $("#PasswordNew").val(),
+				PasswordOld: $("#PasswordOld").val()
+			};
+			window.objAjax.isFuntConfirm = true;
+			window.objAjax.divLoading = "#changePassModal";
+			AjaxPostAsync("/Api/User/ChangePassword", window.objAjax,
+				function (data) {
+					LogOut();
+				});
+		}
+		var url = window.location.href;
+		$("ul.treeview-menu li a").filter(function () {
+			return this.href === url;
+		}).parent().parent().parent().addClass("active");
+		$("ul.treeview-menu li a").filter(function () {
+			return this.href === url;
+		}).parent().parent().addClass("menu-open");
+		$("ul.treeview-menu li a").filter(function () {
+			return this.href === url;
+		}).parent().addClass("active");
+
+		//Đăng xuất hệ thống
+		function LogOut() {
+			AjaxGetAsync("/Api/User/Logout",
+				undefined,
+				function () {
+					window.location.href = "/login";
+				});
+		}
+
+		function ValidatePass() {
+			if ($("#PasswordOld").val() === '') {
+				SwalNotifyWarning("Bạn chưa nhập Mật khẩu cũ");
+				return false;
+			}
+			if ($("#PasswordNew").val() === '') {
+				SwalNotifyWarning("Bạn chưa nhập Mật khẩu mới");
+				return false;
+			}
+			if ($("#PasswordNew").val().length < 6) {
+				SwalNotifyWarning("Mật khẩu mới phải có nhiều hơn 6 ký tự");
+				return false;
+			}
+			if ($("#PasswordNew").val() === $("#PasswordOld").val()) {
+				SwalNotifyWarning("Mật khẩu cũ và mật khẩu mới trùng nhau");
+				return false;
+			}
+			return true;
+		}
+	</script>
+
+	<style>
+	</style>
+	<script>
+		$(document).ready(function () {
+			$('#summernote').summernote({ height: 300 });
+		});
+	</script>
+</body>
+</html>

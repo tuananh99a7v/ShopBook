@@ -14,5 +14,7 @@ namespace BookStore.Model.Models
 		public string Email { get; set; }
 		public string Address { get; set; }
 		public string Description { get; set; }
+		public int? QuantityImport { get; set; }
+		public int? QuantityExport { get; set; }
 	}
 }

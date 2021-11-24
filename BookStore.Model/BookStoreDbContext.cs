@@ -21,7 +21,7 @@ namespace BookStore.Model
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<LogHistory> LogHistories { get; set; }
-
+        public DbSet<Alert> Alerts { get; set; }
         public static BookStoreDbContext Create()
         {
             return new BookStoreDbContext();

@@ -1,13 +1,14 @@
 ﻿using BookStore.Model.Infrastructure;
 using BookStore.Model.Models;
 
-namespace AuthorStore.Model.Repository
+namespace BookStore.Model.Repository
+
 {
-	public interface IAuthorReposistory : IRepository<Author>
+	public interface IAuthorRepository : IRepository<Author>
 	{
 
 	}
-	public class AuthorRepository : RepositoryBase<Author>, IAuthorReposistory
+	public class AuthorRepository : RepositoryBase<Author>, IAuthorRepository
 	{
 		public AuthorRepository(IDbFactory dbFactory) : base(dbFactory)
 		{

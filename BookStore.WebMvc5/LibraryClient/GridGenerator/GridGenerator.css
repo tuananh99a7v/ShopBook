@@ -1,0 +1,142 @@
+﻿/*.th-note {
+    width: 150px !important;
+}
+
+.th-function {
+    width: 80px !important;
+}
+
+.th-code {
+    width: 68px !important;
+}
+
+.td-function {
+    text-align: center;
+}
+
+.th-sex {
+    width: 30px !important;
+}
+
+.th-date {
+    width: 70px !important;
+}
+
+.page-header {
+    color: #1470ca;
+    font-size: 25px;
+}
+
+.table-public tbody tr td {
+    padding: 4px 6px 4px 6px;
+}
+
+.table-public thead tr th {
+    background-color: #428bca;
+    color: #fff;
+    padding: 6px;
+    text-align: center;
+    font-weight: 100;
+}
+
+table thead th {
+    text-align: center;
+}
+
+.table-bordered > tbody > tr > td {
+    border-color: #8e8e8e !important;
+}
+
+.table-bordered {
+    border-color: #8e8e8e !important;
+}
+
+.table > thead > tr > th {
+    border-bottom: none !important;
+}
+
+.vertical-align-inherit {
+    vertical-align: inherit !important;
+}
+
+table.table tbody tr td {
+    vertical-align: inherit !important;
+}*/
+/*pagination css*/
+.pagination {
+    margin: 10px 0;
+}
+
+    .pagination > li > a, .pagination > li > span {
+        padding: 4px 6px;
+    }
+
+    .pagination > .disabled > a,
+    .pagination > .disabled > a:focus,
+    .pagination > .disabled > a:hover,
+    .pagination > .disabled > span,
+    .pagination > .disabled > span:focus,
+    .pagination > .disabled > span:hover {
+        color: #00afc6;
+    }
+
+.gg-table-footer, .gg-table-header {
+    margin: 15px 0;
+    font-size: 14px
+}
+
+.pagination-sm > li > a, .pagination-sm > li > span {
+    font-size: 13px !important;
+}
+
+.gg-table-info {
+    padding-top: 3px;
+    float: right;
+    text-align: right;
+}
+
+.gg-function-icon {
+    background-size: contain;
+    display: inline-block;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+.gg-function {
+    text-align: center;
+}
+
+.gg-pagination-main-right {
+    padding-top: 3px;
+}
+
+.gg-pagination-main {
+    width: 50%;
+}
+
+.gg-pagination-main-left {
+    float: left;
+    margin: -13px 15px 0 0;
+}
+
+table.table-render-html > thead > tr > th {
+    background: #00afc6 !important;
+    color: #fff !important;
+    padding: 8px !important;
+}
+
+table.table-render-html > tbody > tr > td {
+    padding: 8px !important;
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\f0de";
+    float: right;
+    font-family: fontawesome;
+}
+
+table.dataTable thead .sorting_desc:after {
+    content: "\f0dd";
+    float: right;
+    font-family: fontawesome;
+}

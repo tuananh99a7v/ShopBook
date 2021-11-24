@@ -3,11 +3,11 @@ using BookStore.Model.Models;
 
 namespace BookStore.Model.Repository
 {
-	public interface IOrderReposistory : IRepository<Order>
+	public interface IOrderRepository : IRepository<Order>
 	{
 
 	}
-	public class OrderRepository : RepositoryBase<Order>, IOrderReposistory
+	public class OrderRepository : RepositoryBase<Order>, IOrderRepository
 	{
 		public OrderRepository(IDbFactory dbFactory) : base(dbFactory)
 		{

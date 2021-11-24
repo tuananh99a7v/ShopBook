@@ -3,11 +3,11 @@ using BookStore.Model.Models;
 
 namespace BookStore.Model.Repository
 {
-	public interface ILogHistoryReposistory : IRepository<LogHistory>
+	public interface ILogHistoryRepository : IRepository<LogHistory>
 	{
 
 	}
-	public class LogHistoryRepository : RepositoryBase<LogHistory>, ILogHistoryReposistory
+	public class LogHistoryRepository : RepositoryBase<LogHistory>, ILogHistoryRepository
 	{
 		public LogHistoryRepository(IDbFactory dbFactory) : base(dbFactory)
 		{

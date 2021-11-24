@@ -1,0 +1,59 @@
+﻿#theme-options.active #theme-switcher-wrapper {
+    box-shadow: 0 10px 90px rgba(0, 0, 0, 0.3);
+}
+#theme-switcher-wrapper {
+    background: #fff;
+    width: 400px;
+    padding: 10px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    position: relative;
+    z-index: 60;
+    -webkit-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+    /*max-height: 500px;*/
+}
+.btn.theme-switcher {
+    width: 54px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    font-size: 27px;
+    border-width: 1px;
+    border-style: solid;
+    border-right: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    text-align: center;
+    position: absolute;
+    left: -54px;
+    top: 25px;
+    z-index: 55;
+    padding: 0;
+}
+#theme-options.active {
+    transform: translateX(-400px);
+    -ms-transform: translateX(-400px);
+    -o-transform: translateX(-400px);
+    -webkit-transform: translateX(-400px);
+}
+
+#theme-options {
+    position: fixed;
+    top: 78px;
+    right: -400px;
+    z-index: 9999;
+    width: 400px;
+    -webkit-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+
+.div-switcher {
+    max-height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

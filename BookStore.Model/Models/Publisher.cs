@@ -17,5 +17,9 @@ namespace BookStore.Model.Models
 		public int PublisherId { get; set; }
 		public string Name { get; set; }
 		public string Description { get; set; }
+		public int? QuantityImport { get; set; }
+		public int? QuantityExport { get; set; }
+
 	}
+
 }

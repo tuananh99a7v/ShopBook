@@ -1,0 +1,47 @@
+﻿.gg-table-footer, .gg-table-header {
+    margin: 15px 0;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.pagination-sm > li > a, .pagination-sm > li > span {
+    font-size: 14px !important;
+}
+
+.gg-table-info {
+    padding-top: 3px;
+    float: right;
+    text-align: right;
+}
+
+.gg-function-icon {
+    background-size: contain;
+    display: inline-block;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+.gg-function {
+    text-align: center;
+}
+
+.gg-pagination-main {
+    width: 50%;
+}
+
+.gg-pagination-main-left {
+    float: left;
+    margin: -6px 15px 0 0;
+}
+
+.page-item.active .page-link {
+    background-color: #00afc6;
+    border-color: #00afc6;
+} 
+
+.page-item .page-link {
+    padding: 6px 14px;
+}
+.display-none{
+    display: none;
+}
